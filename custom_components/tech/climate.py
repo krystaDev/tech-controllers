@@ -135,6 +135,11 @@ class TechThermostat(ClimateEntity):
         """Return the temperature we try to reach."""
         return self._target_temperature
 
+    @property
+    def target_temperature_step(self):
+        """Return the target temperature step."""
+        return 0.1
+
     async def async_set_temperature(self, **kwargs):
         """Set new target temperatures."""
         temperature = kwargs.get(ATTR_TEMPERATURE)
